@@ -1,12 +1,11 @@
-emailjs.init('hYQw3WrxHepHNIlko'); // Replace with your EmailJS user ID
+emailjs.init('hYQw3WrxHepHNIlko'); //EmailJS user ID
 
-// Carousel functionality
 const carousel = document.querySelector('.carousel');
 const items = document.querySelectorAll('.carousel-item');
 const buttonsContainer = document.querySelector('.carousel-buttons');
 let currentIndex = 0;
 
-// Create carousel dots
+
 items.forEach((_, index) => {
     const dot = document.createElement('div');
     dot.classList.add('carousel-dot');
@@ -19,13 +18,13 @@ function goToSlide(index) {
     currentIndex = index;
     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    // Update active dot
+
     document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
     });
 }
 
-// Add arrow click handlers
+
 document.querySelector('.carousel-arrow.left').addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     goToSlide(currentIndex);
@@ -35,13 +34,13 @@ document.querySelector('.carousel-arrow.right').addEventListener('click', () => 
     goToSlide(currentIndex);
 });
 
-// Auto-advance carousel
+
 let autoAdvance = setInterval(() => {
     currentIndex = (currentIndex + 1) % items.length;
     goToSlide(currentIndex);
 }, 5000);
 
-// Pause auto-advance when hovering over carousel
+
 carousel.addEventListener('mouseenter', () => {
     clearInterval(autoAdvance);
 });
@@ -65,7 +64,7 @@ contactForm.addEventListener('submit', async (e) => {
     submitButton.textContent = 'Sending...';
 
     try {
-        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
+        //'MY_SERVICE_ID' and 'MY_TEMPLATE_ID' 
         await emailjs.sendForm('service_ofnnnbo', 'template_upb974c', contactForm);
 
         contactForm.reset();

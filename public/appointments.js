@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function renderSpecialties() {
       specialtyGrid.innerHTML = '';
-      specialtyGrid.classList.add('grid'); // Apply grid layout to specialties
+      specialtyGrid.classList.add('grid'); 
       specialties.forEach(specialty => {
           const button = document.createElement('button');
           button.textContent = specialty;
@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   
-    // Ensure this function runs on page load
     document.addEventListener('DOMContentLoaded', () => {
       renderSpecialties();
     });
@@ -98,51 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
       renderDates();
     }
   
-    // function renderDates() {
-    //   dateGrid.innerHTML = '';
-    //   const dates = getAvailableDates();
-    //   dates.forEach(date => {
-    //     const button = document.createElement('button');
-    //     button.textContent = new Date(date).toLocaleDateString();
-    //     button.addEventListener('click', () => selectDate(date));
-    //     dateGrid.appendChild(button);
-    //   });
-    //   document.getElementById('date-card').style.display = 'block';
-    // }
-  
-    // function getAvailableDates() {
-    //   const dates = [];
-    //   const today = new Date();
-    //   for (let i = 1; i <= 7; i++) {
-    //     const date = new Date(today);
-    //     date.setDate(today.getDate() + i);
-    //     dates.push(date.toISOString().split('T')[0]);
-    //   }
-    //   return dates;
-    // }
-  
-    // function selectDate(date) {
-    //   selectedDate = date;
-    //   selectedSlot = '';
-    //   availableSlots = generateRandomSlots();
-    //   bookingStatus.textContent = '';
-    //   bookingSection.style.display = 'none';
-  
-    //   document.querySelectorAll('#date-grid button').forEach(btn => btn.classList.remove('selected'));
-    //   document.querySelectorAll('#date-grid button').forEach(btn => {
-    //     if (btn.textContent === new Date(date).toLocaleDateString()) {
-    //       btn.classList.add('selected');
-    //     }
-    //   });
-  
-    //   renderSlots();
-    // }
     function renderDates() {
       document.getElementById('date-card').style.display = 'block';
       const datePicker = document.getElementById('date-picker');
-      datePicker.value = ''; // Reset value on specialty/doctor selection
+      datePicker.value = ''; 
       
-      // Set min date to today & max date to 7 days ahead
+      
       const today = new Date();
       const maxDate = new Date();
       maxDate.setDate(today.getDate() + 7);

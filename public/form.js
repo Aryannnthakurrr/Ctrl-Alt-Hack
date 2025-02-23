@@ -27,7 +27,7 @@ specializationSelect.addEventListener('change', function() {
     }
 });
 
-// Update disease options based on specialization
+// Updating disease options based on specialization
 function updateDiseaseOptions(specialization) {
     diseaseDropdown.innerHTML = '<option value="">Choose Disease</option>';
     
